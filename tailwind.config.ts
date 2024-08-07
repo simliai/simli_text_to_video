@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'lightbg': '#2F2F2F',
+        'textcolor': '#8D8D8D',
+        'gray-1': '#242424', // Main background
+        'gray-2': '#181818', // Side bar background
+        'gray-3': '#2F2F2F', // Button backgrounds
+        'gray-4': '#212121', // Hover backgrounds
+        'gray-5': '#8D8D8D', // Light hint/label color
+        'gray-6': '#767676', // Icon gray color
+        'gray-7': '#454545', // Divider color
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
