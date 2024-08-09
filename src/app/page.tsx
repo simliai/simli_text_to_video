@@ -1,6 +1,6 @@
 'use client';
 import SimliVideo from "@/Components/SimliVideo";
-import {SimliVideoProps} from "@/Components/SimliVideo";
+import { SimliVideoProps } from "@/Components/SimliVideo";
 
 import { useRef, useState } from "react";
 
@@ -34,31 +34,68 @@ export default function Home() {
 
   return (
     <main className="min-h-screen grid grid-cols-12  p-12 divide-x divide-gray-7">
-      <div className="col-span-4 p-4 flex flex-col items-center gap-4">
+      <div className="col-span-4 p-4 flex flex-col items-start gap-4">
         {/* Title */}
 
         <h1 className="text-3xl font-bold text-gray-5">Simli Video</h1>
         <h1 className="text-m  text-gray-5">Text To Video Example</h1>
 
         {/* Input for text and api keys */}
+        <div className="w-full py-1">
+          <p className="text-gray-600 ">
+            Simli API Key
+          </p>
 
-        <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text" placeholder="Simli API Key" onChange={
-          (e) => setSimliApiKey(e.target.value)
-        } value={simliApiKey} />
+          <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text"  onChange={
+            (e) => setSimliApiKey(e.target.value)
+          } value={simliApiKey} />
 
-        <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text" placeholder="Eleven Labs API Key"
-          value={elevenLabsApiKey} onChange={
-            (e) => setElevenLabsApiKey(e.target.value)
+        </div>
+
+        <div className="w-full py-1">
+          <p className="text-gray-600 ">
+            Eleven Labs API Key
+          </p>
+
+          <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text" 
+            value={elevenLabsApiKey} onChange={
+              (e) => setElevenLabsApiKey(e.target.value)
+            } />
+
+        </div>
+
+        <div className="w-full py-1">
+          <p className="text-gray-600 ">
+            Text
+          </p>
+          <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text"  value={text} onChange={
+            (e) => setText(e.target.value)
           } />
-        <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text" placeholder="Text" value={text} onChange={
-          (e) => setText(e.target.value)
-        } />
-        <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text" placeholder="Voice ID" value={voiceId} onChange={
-          (e) => setVoiceId(e.target.value)
-        } />
-        <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text" placeholder="Face ID" value={faceId} onChange={
+
+        </div>
+
+        <div className="w-full py-1">
+          <p className="text-gray-600 ">
+          Voice ID
+          </p>
+          <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text"  value={voiceId} onChange={
+            (e) => setVoiceId(e.target.value)
+          } />
+
+        </div>
+       
+        <div className="w-full py-1">
+          <p className="text-gray-600 ">
+          Face ID
+          </p>
+          <input className="bg-gray-3 w-full px-4 py-1 rounded" type="text"  value={faceId} onChange={
           (e) => setFaceId(e.target.value)
         } />
+
+        </div>
+
+
+        
 
         <button className="bg-gray-3 w-48 px-2 py-1 hover:bg-gray-4 rounded" onClick={
           playVideo
