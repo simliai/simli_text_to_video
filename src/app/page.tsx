@@ -29,7 +29,24 @@ export default function Home() {
       return;
     }
 
-    simliVideoComponent.current?.playVideo(text, simliApiKey, elevenLabsApiKey, voiceId, faceId);
+    const requestData = {
+      ttsAPIKey: elevenLabsApiKey,
+      simliAPIKey: simliApiKey,
+      faceId: faceId,
+      requestBody: {
+        audioProvider: "ElevenLabs",
+        text: text,
+        voiceName: voiceId,
+        model_id: "eleven_turbo_v2",
+        voice_settings: {
+          stability: 0.1,
+          similarity_boost: 0.3,
+          style: 0.2
+        }
+      }
+    };
+
+    simliVideoComponent.current?.playVideo(requestData);
   }
 
   return (
